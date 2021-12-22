@@ -4,4 +4,7 @@ Compilation of SQL and Tableu data analysis related projects and challenges wher
 
 # Projects and Challenges 
 
-Metropolitan Museum of Art 
+Aggregates: 
+- Metropolitan Museum of Art 
+
+
