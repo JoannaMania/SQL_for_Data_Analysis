@@ -1,1 +1,108 @@
+--- What are the top five stories?
 
+SELECT title, score, user, timestamp, url
+FROM hacker_news
+ORDER BY score DESC
+LIMIT 5;
+
+--- Top five stories were Penny Arcade – Surface Pro 3, Hacking The Status Game, Postgres CLI with autocompletion and syntax highlighting, Stephen Fry hits out at ‘infantile’ culture of trigger words and safe spaces, Reversal: Australian Govt picks ODF doc standard over Microsoft
+
+
+--- Recent studies have found that online forums tend to be dominated by a small percentage of their users (1-9-90 Rule).
+--- Is this true of Hacker News?
+--- Is a small percentage of Hacker News submitters taking the majority of the points?
+
+SELECT SUM(score)
+FROM hacker_news
+
+-- The total score is 6366
+
+
+--- find users who accumulated a lot of points across their stories 
+
+
+SELECT user, SUM(score)
+FROM hacker_news
+GROUP BY user
+HAVING SUM(score) > 200
+ORDER BY SUM(score) DESC
+
+--- vxNsr	517, amirkhella	309, dmmalam	304, metafunctor	282
+
+---Add their scores together and divide it by the total sum. 
+SELECT (517 + 309 + 304 + 282) / 6366.0;
+
+--- That is 22% 
+
+--- Are any of the users rickrolling?
+SELECT COUNT(*), user
+FROM hacker_news 
+WHERE url LIKE '%watch?v=dQw4w9WgXcQ%'
+GROUP BY 2
+ORDER BY 1 DESC 
+--- There are two: @sonnynomnom and @scorpiosister
+
+--- Which sites feed Hacker News?
+--- categories based on news source
+SELECT 
+  CASE
+    WHEN URL LIKE '%%github.com' THEN 'Github'
+    WHEN URL LIKE '%%medium.com' THEN 'Medium'
+    WHEN URL LIKE '%%nytimes.com' THEN 'NewYorkTimes'
+   ELSE 'Other'
+  END AS 'Source'
+FROM hacker_news
+
+
+--- add "count" column
+
+SELECT CASE
+    WHEN url LIKE '%%github.com%' THEN 'Github'
+    WHEN url LIKE '%%medium.com%' THEN 'Medium'
+    WHEN url LIKE '%%nytimes.com%' THEN 'NewYorkTimes'
+   ELSE 'Other'
+  END AS 'Source',
+  COUNT(*)
+FROM hacker_news
+GROUP BY 1;
+
+--- The number of times stories are linked to: GitHub - 23, Medium - 12, New York Times - 13
+
+--- What's the best time to post a story?
+
+--- Let's look at the timestamp column'
+
+SELECT timestamp
+FROM hacker_news
+LIMIT 10;
+
+--- format the timestamp to extract the hours
+
+SELECT timestamp,
+   strftime('%H', timestamp)
+FROM hacker_news
+GROUP BY 1
+LIMIT 20;
+
+
+--- get the agerave score for hour
+SELECT 
+  strftime('%H', timestamp) AS hour, 
+  AVG(score) AS avg_score, 
+  COUNT(*)
+FROM hacker_news
+GROUP BY hour
+ORDER BY hour
+
+--- Edit the result
+
+SELECT 
+  strftime('%H', timestamp) AS hour, 
+  ROUND(AVG(score,), 1) AS avg_score, 
+  COUNT(*)
+FROM hacker_news
+WHERE strftime('%H', timestamp) IS NOT NULL
+GROUP BY hour
+ORDER BY hour
+
+--- The best hour to post a story is 18:00. 
