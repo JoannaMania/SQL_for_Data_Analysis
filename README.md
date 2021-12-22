@@ -4,7 +4,8 @@ Compilation of SQL and Tableu data analysis related projects and challenges wher
 
 # Projects and Challenges 
 
-Aggregates: 
-- Metropolitan Museum of Art 
+Aggregates projects: 
+- [Metropolitan Museum of Art]
+- How to Hack Hacker News 
 
 
