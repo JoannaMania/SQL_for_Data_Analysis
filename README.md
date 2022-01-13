@@ -12,7 +12,7 @@ Aggregates projects:
 
 Joining multiple tables: 
 - [Songify Introduction](https://github.com/JoannaMania/SQL_for_Data_Analysis/tree/master/Joining%20mulitple%20tables/Songify%20Introduction)
-- [Multiple Tables with Reddit]()
+- [Multiple Tables with Reddit](https://github.com/JoannaMania/SQL_for_Data_Analysis/tree/master/Joining%20mulitple%20tables/Multiple%20Tables%20with%20Reddit)
 
 Analyze read data with sql: 
 - [Usage Funnels with Warby Parker]()
