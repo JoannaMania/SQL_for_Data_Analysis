@@ -14,26 +14,25 @@ FROM transactions;
 SELECT COUNT(money_in)
 FROM transactions;
 
--- How many money_in transactions are in this table where ‘BIT’ is the currency? 21
+-- How many money_in transactions are in this table where ‘BIT’ is the currency? Answer: 21
 SELECT COUNT(money_in)
 FROM transactions
 WHERE currency = 'BIT';
 
 
--- What was the largest transaction in this whole table?
+-- What was the largest transaction in this whole table? Answer: money in - 6000.0, money out- 15047.0
 SELECT MAX(money_in)
 FROM transactions;
-6000.0
 
 SELECT MAX(money_out)
 FROM transactions;
-15047.0
 
----What is the average money_in in the table for the currency Ethereum (‘ETH’)?
+
+---What is the average money_in in the table for the currency Ethereum (‘ETH’)? Answer: 131.8888
 SELECT AVG(money_in)
 FROM transactions
 WHERE currency = 'ETH'
-131.888888888889
+
 
 ---Let’s build a ledger for the different dates.
 SELECT date, 
