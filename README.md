@@ -8,7 +8,7 @@ They come from the Analyze Data with SQL Skill Path at Code Academy.
 Aggregates projects: 
 - [Metropolitan Museum of Art](https://github.com/JoannaMania/SQL_for_Data_Analysis/tree/master/Aggregates/The%20Metropolitan%20Museum%20of%20Art)
 - [How to Hack Hackers News](https://github.com/JoannaMania/SQL_for_Data_Analysis/tree/master/Aggregates/How%20to%20hack%20hacker%20news)
-- Cryptocurrency Exchange(
+- [Cryptocurrency Exchange](https://github.com/JoannaMania/SQL_for_Data_Analysis/tree/master/Aggregates/Cryptocurrency%20Exchange)
 
 Joining multiple tables: 
 - 
