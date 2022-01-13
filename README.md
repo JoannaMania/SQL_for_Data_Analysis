@@ -11,7 +11,7 @@ Aggregates projects:
 - [Cryptocurrency Exchange](https://github.com/JoannaMania/SQL_for_Data_Analysis/tree/master/Aggregates/Cryptocurrency%20Exchange)
 
 Joining multiple tables: 
-- [Songify Introduction]
-- [Multiple Tables with Reddit]
+- [Songify Introduction](https://github.com/JoannaMania/SQL_for_Data_Analysis/tree/master/Joining%20mulitple%20tables/Songify%20Introduction)
+- [Multiple Tables with Reddit]()
 
 
